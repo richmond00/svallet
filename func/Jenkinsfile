@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+
+  stages {
+    stage("Demo") {
+      steps {
+        myFunc("Hello from the demo stage!")
+        myFunc("2nd steps")
+      }
+    }
+  }
+}
+
+def myFunc(String myText) {
+  def localVar = 123;
+
+  echo "myText is set to: ${myText}"
+  echo "myText is set to: ${localVar}"
+}
